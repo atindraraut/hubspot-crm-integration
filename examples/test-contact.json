@@ -1,0 +1,11 @@
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "phone": "+1234567890",
+  "ownerId": "12345",
+  "candidateExperience": 5,
+  "candidateDateOfJoining": "2024-03-15",
+  "candidateName": "John Smith",
+  "candidatePastCompany": "Google Inc."
+}
