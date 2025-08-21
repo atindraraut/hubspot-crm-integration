@@ -1,18 +1,18 @@
-# HubSpot Backend Integration Assignment - Final Submission
+# HubSpot Backend Integration project
 
 **Developer:** Atindra Raut
 **Email:** atindraraut80@gmail.com
 **Date:** August 2025
-**Assignment:** Backend Integration & HubSpot Automation
+**project:** Backend Integration & HubSpot Automation
 **Technology:** Node.js, Express.js, HubSpot API v3
 
 ---
 
 ## Introduction
 
-Working on this HubSpot assignment has been quite the learning experience! When I first read through the requirements, I thought it would be relatively straightforward - set up some webhooks and create a few API endpoints. However, as I started diving deeper into the implementation, I discovered there were actually quite a few interesting technical challenges that made this project much more engaging than I initially expected.
+Working on this HubSpot project has been quite the learning experience! When I first read through the requirements, I thought it would be relatively straightforward - set up some webhooks and create a few API endpoints. However, as I started diving deeper into the implementation, I discovered there were actually quite a few interesting technical challenges that made this project much more engaging than I initially expected.
 
-The assignment consisted of two main components: first, creating an automated webhook system that triggers whenever contacts get assigned to owners in HubSpot, and second, building a complete API system for managing custom contact properties. Let me walk you through my approach, the challenges I encountered, and what I learned throughout this process.
+The project consisted of two main components: first, creating an automated webhook system that triggers whenever contacts get assigned to owners in HubSpot, and second, building a complete API system for managing custom contact properties. Let me walk you through my approach, the challenges I encountered, and what I learned throughout this process.
 
 ## Part 1: Webhook Automation Implementation
 
@@ -30,7 +30,7 @@ Initially, I was planning to build a complex backend system that would listen fo
 I logged into HubSpot and navigated to the Automation section. Created a new contact-based workflow and gave it a descriptive name. The tricky part was configuring the trigger condition correctly - it needed to fire whenever the Contact Owner property gets assigned or updated, not just when contacts are created.
 
 **Step 2: Configuring the Webhook Action**
-Added a webhook action that sends a POST request to webhook.site. I had to be really careful about the JSON payload format since the assignment specified exactly what it should look like:
+Added a webhook action that sends a POST request to webhook.site. I had to be really careful about the JSON payload format since the project specified exactly what it should look like:
 
 ```json
 {
@@ -43,7 +43,7 @@ Added a webhook action that sends a POST request to webhook.site. I had to be re
 This was actually the most challenging part initially. I used HubSpot's personalization tokens to dynamically pull the contact's information. The syntax is `{{ contact.firstname }}` and `{{ contact.phone }}`, which gets replaced with the actual contact data when the webhook fires.
 
 **Step 4: Testing the Implementation**
-Created a test contact with the exact name and phone number specified in the assignment. When I assigned it to an owner, I could immediately see the webhook firing on webhook.site with the correct data format. It was pretty satisfying to see it work exactly as intended!
+Created a test contact with the exact name and phone number specified in the project. When I assigned it to an owner, I could immediately see the webhook firing on webhook.site with the correct data format. It was pretty satisfying to see it work exactly as intended!
 
 ### Why This Approach Makes Sense
 
@@ -63,7 +63,7 @@ This is where the project got really interesting from a technical standpoint. I 
 
 ### The Custom Properties Challenge
 
-The assignment required these four specific properties:
+The project required these four specific properties:
 
 - `candidate_experience` (Number) - years of professional experience
 - `candidate_date_of_joining` (Date) - expected start date
@@ -92,7 +92,7 @@ This modular approach made the code much easier to debug and maintain as I added
 
 - `GET /api/properties` - Shows status of all custom properties
 - `POST /api/properties` - Creates individual custom properties (bonus feature)
-- `POST /api/properties/setup` - Creates all four assignment properties at once
+- `POST /api/properties/setup` - Creates all four project properties at once
 - `GET /api/properties/:name` - Gets details about a specific property
 
 **Contact Management:**
@@ -173,7 +173,7 @@ Developed another script that systematically tests every API endpoint to ensure 
 When everything is working properly, the test output looks like this:
 
 ```
-🎉 ALL ASSIGNMENT REQUIREMENTS TESTED SUCCESSFULLY!
+🎉 ALL project REQUIREMENTS TESTED SUCCESSFULLY!
 ==================================================
 ✅ Custom properties created
 ✅ Contact creation with custom properties
@@ -182,7 +182,7 @@ When everything is working properly, the test output looks like this:
 ✅ Search functionality
 ✅ Batch operations
 
-🏆 ASSIGNMENT 2 IS FULLY FUNCTIONAL!
+🏆 project 2 IS FULLY FUNCTIONAL!
 ```
 
 ## Documentation and Developer Experience
@@ -203,10 +203,10 @@ I commented the code thoroughly so other developers (or future me) can understan
 
 ## Going Beyond the Requirements
 
-While working on this assignment, I found myself implementing additional features that weren't strictly required but seemed valuable for a real-world application:
+While working on this project, I found myself implementing additional features that weren't strictly required but seemed valuable for a real-world application:
 
 **Individual Property Creation:**
-The assignment only specified the four required properties, but I thought it would be useful to support creating arbitrary custom properties through the API for future extensibility.
+The project only specified the four required properties, but I thought it would be useful to support creating arbitrary custom properties through the API for future extensibility.
 
 **Batch Contact Operations:**
 The ability to create multiple contacts simultaneously seemed essential for any production use case where you might need to import contact lists.
@@ -231,14 +231,14 @@ This was my first experience working with HubSpot's API ecosystem, so there was 
 I probably spent more time than necessary debugging authentication issues before I fully understood the scope requirements for creating custom properties. This taught me the importance of carefully reading API documentation before starting implementation.
 
 **Webhook Payload Formatting:**
-Getting the exact JSON format correct for the webhook assignment required several iterations. HubSpot's personalization tokens have some nuances that aren't immediately obvious from the documentation.
+Getting the exact JSON format correct for the webhook project required several iterations. HubSpot's personalization tokens have some nuances that aren't immediately obvious from the documentation.
 
 **Error Handling Complexity:**
 Ensuring the API gracefully handles all possible failure scenarios (invalid tokens, network issues, malformed requests, HubSpot API errors, rate limiting) was more complex than I initially anticipated.
 
 ### What I Learned
 
-This assignment provided valuable learning opportunities in several areas:
+This project provided valuable learning opportunities in several areas:
 
 **API Design Principles:**
 I significantly improved my understanding of designing clean, RESTful APIs with proper error handling, input validation, and consistent response formats.
@@ -303,7 +303,7 @@ For reference, here are the key technical details:
 **Project Structure:**
 
 ```
-hubspot-assignment2/
+hubspot-project2/
 ├── src/
 │   ├── config/           # Configuration and validation
 │   ├── services/         # HubSpot API integration layer
@@ -327,14 +327,14 @@ The entire system is ready to run and test immediately after following these set
 
 ## Conclusion
 
-This assignment turned out to be much more engaging and educational than I initially expected. I started with what seemed like a straightforward integration project and ended up building something that's genuinely sophisticated and production-ready.
+This project turned out to be much more engaging and educational than I initially expected. I started with what seemed like a straightforward integration project and ended up building something that's genuinely sophisticated and production-ready.
 
-The most rewarding moment was seeing the webhook automation work end-to-end for the first time. Creating a contact in HubSpot, assigning an owner, and immediately seeing the webhook fire with the exact data format specified in the assignment - that was really satisfying.
+The most rewarding moment was seeing the webhook automation work end-to-end for the first time. Creating a contact in HubSpot, assigning an owner, and immediately seeing the webhook fire with the exact data format specified in the project - that was really satisfying.
 
-The API system also evolved into something much more robust than I originally planned. It not only handles all the assignment requirements but also includes additional features that would be valuable in real-world business scenarios.
+The API system also evolved into something much more robust than I originally planned. It not only handles all the project requirements but also includes additional features that would be valuable in real-world business scenarios.
 
 This project effectively combined workflow automation with API development in an interesting way, and I definitely learned a lot about both HubSpot's platform capabilities and best practices for building integration systems.
 
-Thank you for providing such an engaging assignment that challenged me to think about both technical implementation details and overall user experience. I really enjoyed working on something that feels like it could be genuinely useful in a real business context!
+Thank you for providing such an engaging project that challenged me to think about both technical implementation details and overall user experience. I really enjoyed working on something that feels like it could be genuinely useful in a real business context!
 
 ---
